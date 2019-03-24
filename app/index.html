@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Earth-Mars Communication Latency</title>
+    <link rel="stylesheet" href="css/bulma/css/bulma.min.css">
+  </head>
+  <body>
+    <section class="hero is-medium is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-8-desktop is-offset-2-desktop">
+              <h1 class="title is-2 is-spaced">
+                Hello Mars!
+              </h1>
+              <h2 class="subtitle is-4">
+                  Find out the latency of communication between Earth and Mars.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8-desktop is-offset-2-desktop">
+            <div class="content">
+              <h3>How long does it take for my message to reach Mars?</h3>
+
+            
+             <!-- This is the beginning of the contents -->
+
+
+<div id="app">
+<p>The communication time between Earth and Mars depends on the time.
+</p>
+<p>
+Current Time is 
+<span style="display: block; font-size:110%;font-weight:bold;">{{ current_date }}</span>
+</p>
+<p>
+It takes <span style="font-weight:bold;">{{ earth_mars_distance_lm }} minutes</span> for you message to reach Mars. A round trip would be <span style="font-weight:bold;">{{ earth_mars_round_trip }} minutes</span>.
+</p>
+</div>
+
+             <!-- This is the beginning of the contents -->
+              
+              
+            </div>
+            
+            <div class="content">
+              <p>
+
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer has-text-centered">
+      <div class="container">
+         <div class="columns">
+          <div class="column is-8-desktop is-offset-2-desktop">
+            <p>
+              <strong class="has-text-weight-semibold">
+                Built by <a href="http://interimm.org">Interplanetary Immigration Center</a> with love.
+              </strong>
+            </p>
+            <p>
+              <small>
+                Source code licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="lib/vue.js"></script>
+    <script type="text/javascript" src="lib/orb.js/build/orb.v2.js"></script>
+    <script type="text/javascript" src="lib/moment/moment-with-locales.js"></script>
+    
+    <script type="text/javascript" src="lib/main.js"></script>
+
+  </body>
+</html>
