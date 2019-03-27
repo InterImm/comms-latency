@@ -27,15 +27,6 @@
       </div>
     </div>
   </section>
-  <section class="hero">
-    <div id="sky-wrapper" class="is-fullhd">
-      <span class="icon icon-zoom-in" id="zoom-in"></span>
-      <span class="icon icon-zoom-out" id="zoom-out"></span>
-      <span class="icon icon-target" id="target" title="Go to Mars"></span>
-      <canvas id="sky">
-      </canvas>
-    </div>
-  </section>
   <section class="section">
     <div class="container">
       <div class="columns">
@@ -64,13 +55,39 @@
 
           </div>
           <div class="content">
-            <p>
+            <div id="solarsystem" style="width:100%;text-align:center;"></div>
+            
+            <div id="distance-chart"></div>
 
-            </p>
           </div>
 
         </div>
       </div>
+    </div>
+  </section>
+
+
+<section class="hero is-medium is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8-desktop is-offset-2-desktop">
+            
+            <h2 class="subtitle is-4 is-centered">
+              Locate Mars in the sky
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero">
+    <div id="sky-wrapper" class="is-fullhd">
+      <span class="icon icon-zoom-in" id="zoom-in"></span>
+      <span class="icon icon-zoom-out" id="zoom-out"></span>
+      <span class="icon icon-target" id="target" title="Go to Mars"></span>
+      <canvas id="sky">
+      </canvas>
     </div>
   </section>
 
@@ -97,12 +114,12 @@
   <script type="text/javascript" src="lib/orb.js/build/orb.v2.js"></script>
   <script type="text/javascript" src="lib/moment/moment-with-locales.js"></script>
 
-
-
-  <script type="text/javascript" src="lib/main.js"></script>
   <script type="text/javascript" src="lib/sky-sphere/sky-sphere.min.js"></script>
   <script type="text/javascript" src="lib/sky.js"></script>
+  <script type="text/javascript" src="lib/p5/p5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+  <script type="text/javascript" src="lib/main.js"></script>
 
 </body>
 
