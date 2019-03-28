@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Earth-Mars Communication Latency</title>
   <link rel="stylesheet" href="css/bulma/css/bulma.min.css">
-  <link rel="stylesheet" href="css/sky.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -67,30 +67,6 @@
   </section>
 
 
-<section class="hero is-medium is-primary">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-8-desktop is-offset-2-desktop">
-            
-            <h2 class="subtitle is-4 is-centered">
-              Locate Mars in the sky and point your antenna to Mars!
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="hero">
-    <div id="sky-wrapper" class="is-fullhd">
-      <span class="icon icon-zoom-in" id="zoom-in"></span>
-      <span class="icon icon-zoom-out" id="zoom-out"></span>
-      <span class="icon icon-target" id="target" title="Go to Mars"></span>
-      <canvas id="sky">
-      </canvas>
-    </div>
-  </section>
-
   <footer class="footer has-text-centered">
     <div class="container">
       <div class="columns">
@@ -113,12 +89,12 @@
   <script type="text/javascript" src="lib/vue.js"></script>
   <script type="text/javascript" src="lib/orb.js/build/orb.v2.js"></script>
   <script type="text/javascript" src="lib/moment/moment-with-locales.js"></script>
+  <script type="text/javascript" src="lib/d3/d3.min.js"></script>
 
-  <script type="text/javascript" src="lib/sky-sphere/sky-sphere.min.js"></script>
-  <script type="text/javascript" src="lib/sky.js"></script>
-  <script type="text/javascript" src="lib/p5/p5.min.js"></script>
+
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+  <script type="text/javascript" src="lib/util.js"></script>
   <script type="text/javascript" src="lib/main.js"></script>
 
 </body>
