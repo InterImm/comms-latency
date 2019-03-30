@@ -8,9 +8,10 @@
   <title>Earth-Mars Communication Latency</title>
   <link rel="stylesheet" href="css/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="has-navbar-fixed-bottom">
   <section class="hero is-medium is-primary">
     <div class="hero-body">
       <div class="container">
@@ -85,6 +86,58 @@
       </div>
     </div>
   </footer>
+
+  <nav class="navbar is-transparent is-fixed-bottom">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="//interimm.org">
+      <img src="//interimm.org/assets/ico/favicon-192x192.png" alt="Interplanetary Immigration Center" width="28" height="28">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="//interimm.org">
+        Home
+      </a>
+      <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
+        <a class="navbar-link" href="//interimm.org/archives">
+          Tools
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="//interimm.org/mars-clock/">
+            Mars Clock
+          </a>
+          <a class="navbar-item" href="//interimm.org/mars-map/">
+            Mars Map
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item is-active" href="//interimm.org/archives">
+            More
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button" href="https://github.com/interimm/comms-latency" target="blank">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
   <script type="text/javascript" src="lib/vue.js"></script>
   <script type="text/javascript" src="lib/orb.js/build/orb.v2.js"></script>
