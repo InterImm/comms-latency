@@ -42,6 +42,7 @@
               <p>由于地球和火星时刻围绕太阳运转，地球和火星之间的通信延时是随时变化的。
               </p>
               <p>
+                  <!-- <datetime type="datetime" v-model="datetime"></datetime> -->
                 当前时间是
                 <span style="display: block; font-size:110%;font-weight:bold;">{{ current_date_string_cn }}</span>
               </p>
@@ -156,6 +157,9 @@
 
 
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <script src="lib/datetime/luxon.min.js"></script>
+  <script src="lib/datetime/vue-datetime.min.js"></script>
 
   <script type="text/javascript" src="lib/util.js"></script>
   <script type="text/javascript" src="lib/main.js"></script>
