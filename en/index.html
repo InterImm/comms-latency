@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Earth-Mars Communication Latency</title>
+  <link rel="stylesheet" href="../css/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body class="has-navbar-fixed-bottom">
+  <section class="hero is-medium is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-8-desktop is-offset-2-desktop">
+            <h1 class="title is-2 is-spaced">
+              Hello Mars!
+            </h1>
+            <h2 class="subtitle is-4">
+              Find out the communication latency between Earth and Mars.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <div class="content">
+            <h3>How long does it take for my message to reach Mars?</h3>
+
+            <!-- This is the beginning of the contents -->
+
+            <div id="app">
+              <p>The communication time between Earth and Mars depends on the time.
+              </p>
+              <p>
+                Current Time is
+                <span style="display: block; font-size:110%;font-weight:bold;">{{ current_date }}</span>
+              </p>
+              <p>
+                It takes <span style="font-weight:bold;">{{ earth_mars_distance_lm }} minutes</span> for your message to
+                reach Mars. A round trip would be <span style="font-weight:bold;">{{ earth_mars_round_trip }}
+                  minutes</span>.
+              </p>
+
+            </div>
+
+            <!-- This is the beginning of the contents -->
+
+          </div>
+          <div class="content">
+            <div id="solarsystem" style="width:100%;text-align:center;"></div>
+
+            <div id="distance-chart"></div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer has-text-centered">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <p>
+            <strong class="has-text-weight-semibold">
+              Built by <a href="http://interimm.org">Interplanetary Immigration Center</a> with love.
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="navbar is-dark is-fixed-bottom">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="//interimm.org">
+          <img src="//interimm.org/assets/ico/favicon-192x192.png" alt="Interplanetary Immigration Center" width="28"
+            height="28">
+        </a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+  
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="//interimm.org">
+            Home
+          </a>
+          <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
+            <a class="navbar-link" href="//interimm.org/archives">
+              Tools
+            </a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="//interimm.org/mars-clock/">
+                Mars Clock
+              </a>
+              <a class="navbar-item" href="//interimm.org/mars-map/">
+                Mars Map
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" href="//interimm.org/archives">
+                More
+              </a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="nav-link nav-link-icon" href="https://github.com/interimm/comms-latency" target="blank"
+                  style="color: #ebf391;">
+                  <i class="fab fa-github-square"></i>
+                  <span class="nav-link-inner--text">
+  
+                  </span>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="nav-link nav-link-icon" href="../" data-toggle="tooltip" title="Switch Language"
+                  style="color: #ebf391;">
+                  <i class="fa fa-language"></i>
+                  <span class="nav-link-inner--text">中文</span>
+                </a>
+              </p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </nav>
+
+  <script type="text/javascript" src="../lib/vue.js"></script>
+  <script type="text/javascript" src="../lib/orb.js/build/orb.v2.js"></script>
+  <script type="text/javascript" src="../lib/moment/moment-with-locales.js"></script>
+  <script type="text/javascript" src="../lib/d3/d3.min.js"></script>
+
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <script type="text/javascript" src="../lib/util.js"></script>
+  <script type="text/javascript" src="../lib/main.js"></script>
+
+</body>
+
+</html>
