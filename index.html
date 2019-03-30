@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Earth-Mars Communication Latency</title>
+  <title>火星-地球通信延时</title>
   <link rel="stylesheet" href="css/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body class="has-navbar-fixed-bottom">
@@ -18,10 +19,10 @@
         <div class="columns">
           <div class="column is-8-desktop is-offset-2-desktop">
             <h1 class="title is-2 is-spaced">
-              Hello Mars!
+              火星-地球通信延时
             </h1>
             <h2 class="subtitle is-4">
-              Find out the communication latency between Earth and Mars.
+              需要于火星上的朋友进行通信？可是地球到火星通信的延时是多少呢？星际移民中心制作了这个工具，你可以实时了解延时的情况。
             </h2>
           </div>
         </div>
@@ -33,21 +34,20 @@
       <div class="columns">
         <div class="column is-8-desktop is-offset-2-desktop">
           <div class="content">
-            <h3>How long does it take for my message to reach Mars?</h3>
+            <h3>你发送的消息从地球到火星需要多久呢？</h3>
 
             <!-- This is the beginning of the contents -->
 
             <div id="app">
-              <p>The communication time between Earth and Mars depends on the time.
+              <p>由于地球和火星时刻围绕太阳运转，地球和火星之间的通信延时是随时变化的。
               </p>
               <p>
-                Current Time is
-                <span style="display: block; font-size:110%;font-weight:bold;">{{ current_date }}</span>
+                当前时间是
+                <span style="display: block; font-size:110%;font-weight:bold;">{{ current_date_string_cn }}</span>
               </p>
               <p>
-                It takes <span style="font-weight:bold;">{{ earth_mars_distance_lm }} minutes</span> for your message to
-                reach Mars. A round trip would be <span style="font-weight:bold;">{{ earth_mars_round_trip }}
-                  minutes</span>.
+                你的消息从地球到达火星，需要<span style="font-weight:bold;"> {{ earth_mars_distance_lm }} 分钟</span>的时间。消息往返需要 <span style="font-weight:bold;">{{ earth_mars_round_trip }}
+                  分钟</span>.
               </p>
 
             </div>
@@ -57,8 +57,8 @@
           </div>
           <div class="content">
             <div id="solarsystem" style="width:100%;text-align:center;"></div>
-            
-            <div id="distance-chart"></div>
+
+            <div id="distance-chart-cn"></div>
 
           </div>
 
@@ -74,70 +74,80 @@
         <div class="column is-8-desktop is-offset-2-desktop">
           <p>
             <strong class="has-text-weight-semibold">
-              Built by <a href="http://interimm.org">Interplanetary Immigration Center</a> with love.
+              <a href="http://interimm.org">星际移民中心</a>制作
             </strong>
-          </p>
-          <p>
-            <small>
-              Source code licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-            </small>
           </p>
         </div>
       </div>
     </div>
   </footer>
 
-  <nav class="navbar is-transparent is-fixed-bottom">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="//interimm.org">
-      <img src="//interimm.org/assets/ico/favicon-192x192.png" alt="Interplanetary Immigration Center" width="28" height="28">
-    </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div id="navbarExampleTransparentExample" class="navbar-menu">
-    <div class="navbar-start">
+  <nav class="navbar is-dark is-fixed-bottom">
+    <div class="navbar-brand">
       <a class="navbar-item" href="//interimm.org">
-        Home
+        <img src="//interimm.org/assets/ico/favicon-192x192.png" alt="Interplanetary Immigration Center" width="28"
+          height="28">
       </a>
-      <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
-        <a class="navbar-link" href="//interimm.org/archives">
-          Tools
-        </a>
-        <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item" href="//interimm.org/mars-clock/">
-            Mars Clock
-          </a>
-          <a class="navbar-item" href="//interimm.org/mars-map/">
-            Mars Map
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item is-active" href="//interimm.org/archives">
-            More
-          </a>
-        </div>
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
-            <a class="button" href="https://github.com/interimm/comms-latency" target="blank">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="//interimm.org">
+          星际移民中心
+        </a>
+        <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
+          <a class="navbar-link" href="//interimm.org/archives">
+           其他工具
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="//interimm.org/mars-clock/">
+              火星时钟
             </a>
-          </p>
+            <a class="navbar-item" href="//interimm.org/mars-map/">
+              火星地图
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="//interimm.org/archives">
+              更多
+            </a>
+          </div>
         </div>
       </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="nav-link nav-link-icon" href="https://github.com/interimm/comms-latency" target="blank"
+                style="color: #ebf391;">
+                <i class="fab fa-github-square"></i>
+                <span class="nav-link-inner--text">
+
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="nav-link nav-link-icon" href="en" data-toggle="tooltip" title="Switch Language"
+                style="color: #ebf391;">
+                <i class="fa fa-language"></i>
+                <span class="nav-link-inner--text">EN</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <script type="text/javascript" src="lib/vue.js"></script>
   <script type="text/javascript" src="lib/orb.js/build/orb.v2.js"></script>
