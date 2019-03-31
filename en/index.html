@@ -41,15 +41,34 @@
             <div id="app">
               <p>The communication time between Earth and Mars depends on the time.
               </p>
-              <p>
-                Current Time is
-                <span style="display: block; font-size:110%;font-weight:bold;">{{ current_date }}</span>
-              </p>
-              <p>
-                It takes <span style="font-weight:bold;">{{ earth_mars_distance_lm }} minutes</span> for your message to
-                reach Mars. A round trip would be <span style="font-weight:bold;">{{ earth_mars_round_trip }}
-                  minutes</span>.
-              </p>
+
+              <div class="field">
+                  <label class="label">Type in datetime（i.e., 2019-04-01T08:30:18Z, 2019-04-01T08:30:18+08:00, 2019-04-01）</label>
+              <div class="control">
+                  <input class="input" type="datetime" v-model="form.selected_date">
+                </div>
+              </div>
+
+
+              <div class="box">
+                  <article class="media">
+                    <div class="media-content">
+                      <div class="content">
+                        <p>
+                            Current Local Time is
+                          <div class="field">
+                            <label class="label"><span style="display: block; font-size:110%;font-weight:bold;">{{ current_date_string }}</span></label>
+                          </div>
+                        </p>
+                        <p>
+                            It takes <span style="font-weight:bold;">{{ earth_mars_distance_lm }} minutes</span> for your message to
+                            reach Mars. A round trip would be <span style="font-weight:bold;">{{ earth_mars_round_trip }}
+                              minutes</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
 
             </div>
 
@@ -57,8 +76,18 @@
 
           </div>
           <div class="content">
+              <div>
+                  <p>
+                    We sketched the relative positions of Earth and Mars.
+                  </p>
+                </div>
             <div id="solarsystem" style="width:100%;text-align:center;"></div>
 
+            <div>
+                <p>
+                  To find out the distance for those nearby dates, we made this interactive plot. The red dot indicates the date of your choice.
+                </p>
+              </div>
             <div id="distance-chart"></div>
 
           </div>
@@ -85,7 +114,7 @@
 
   <nav class="navbar is-dark is-fixed-bottom">
       <div class="navbar-brand">
-        <a class="navbar-item" href="//interimm.org">
+        <a class="navbar-item" href="//interimm.org/en">
           <img src="//interimm.org/assets/ico/favicon-192x192.png" alt="Interplanetary Immigration Center" width="28"
             height="28">
         </a>
@@ -98,22 +127,22 @@
   
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="//interimm.org">
+          <a class="navbar-item" href="//interimm.org/en">
             Home
           </a>
           <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
-            <a class="navbar-link" href="//interimm.org/archives">
+            <a class="navbar-link" href="//interimm.org/en/archives">
               Tools
             </a>
             <div class="navbar-dropdown is-boxed">
-              <a class="navbar-item" href="//interimm.org/mars-clock/">
+              <a class="navbar-item" href="//interimm.org/mars-clock/en">
                 Mars Clock
               </a>
               <a class="navbar-item" href="//interimm.org/mars-map/">
                 Mars Map
               </a>
               <hr class="navbar-divider">
-              <a class="navbar-item" href="//interimm.org/archives">
+              <a class="navbar-item" href="//interimm.org/en/archives">
                 More
               </a>
             </div>
