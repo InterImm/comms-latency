@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="lib/datetime/bulma-calendar/css/bulma-calendar.min.css">
+
 </head>
 
 <body class="has-navbar-fixed-bottom">
@@ -41,15 +43,33 @@
             <div id="app">
               <p>由于地球和火星时刻围绕太阳运转，地球和火星之间的通信延时是随时变化的。
               </p>
-              <p>
-                  <!-- <datetime type="datetime" v-model="datetime"></datetime> -->
-                当前时间是
-                <span style="display: block; font-size:110%;font-weight:bold;">{{ current_date_string_cn }}</span>
-              </p>
-              <p>
-                你的消息从地球到达火星，需要<span style="font-weight:bold;"> {{ earth_mars_distance_lm }} 分钟</span>的时间。消息往返需要 <span style="font-weight:bold;">{{ earth_mars_round_trip }}
-                  分钟</span>.
-              </p>
+
+              <div class="field">
+                  <label class="label">填写日期和时间（格式举例：2019-04-01T08:30:18Z，2019-04-01）</label>
+              <div class="control">
+                  <input class="input" type="datetime" v-model="form.selected_date">
+                </div>
+              </div>
+
+              <div class="box">
+                <article class="media">
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        当前时区的时间是
+                        <div class="field">
+                          <label class="label"><span>{{current_date_string_cn}}</span></label>
+                        </div>
+                      </p>
+                      <p>
+                        你的消息从地球到达火星，需要<span style="font-weight:bold;"> {{ earth_mars_distance_lm }} 分钟</span>的时间。消息往返需要
+                        <span style="font-weight:bold;">{{ earth_mars_round_trip }}
+                          分钟</span>.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
 
             </div>
 
@@ -57,8 +77,18 @@
 
           </div>
           <div class="content">
+            <div>
+              <p>
+                我们绘制了所选日期时，火星和地球的相对位置的情况。
+              </p>
+            </div>
             <div id="solarsystem" style="width:100%;text-align:center;"></div>
 
+            <div>
+              <p>
+                通过下面的图，我们可以查看所选的时间附近日期的通信情况。
+              </p>
+            </div>
             <div id="distance-chart-cn"></div>
 
           </div>
@@ -103,7 +133,7 @@
         </a>
         <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
           <a class="navbar-link" href="//interimm.org/archives">
-           其他工具
+            其他工具
           </a>
           <div class="navbar-dropdown is-boxed">
             <a class="navbar-item" href="//interimm.org/mars-clock/">
@@ -158,8 +188,9 @@
 
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-  <script src="lib/datetime/luxon.min.js"></script>
-  <script src="lib/datetime/vue-datetime.min.js"></script>
+  <!-- <script src="lib/datetime/luxon.min.js"></script>
+  <script src="lib/datetime/vue-datetime.min.js"></script> -->
+  <script src="lib/datetime/bulma-calendar/js/bulma-calendar.min.js"></script>
 
   <script type="text/javascript" src="lib/util.js"></script>
   <script type="text/javascript" src="lib/main.js"></script>
