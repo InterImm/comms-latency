@@ -2,3 +2,15 @@
     stroke:rgb(255,135,0);
     fill: rgb(255,135,0);
   }
+[v-cloak] > * { display:none }
+[v-cloak]::before { content: "…" }
+.astro_selector {
+  margin-bottom: 1em;
+  align-content: center;
+  text-align: center;
+}
+.astro_selector span {
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: 120%;
+}

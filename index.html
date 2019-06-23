@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>火星-地球通信延时</title>
+  <meta name="keywords" content="太阳系,火星,通信,星际通信">
+  <title>太阳系天体之间通信延时计算器</title>
   <link rel="stylesheet" href="css/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -37,12 +38,13 @@
         <div class="column is-8-desktop is-offset-2-desktop">
           <div class="content">
 
-            <h3>你发送的消息从地球到火星需要多久呢？</h3>
+
 
             <!-- This is the beginning of the contents -->
 
             <div id="app">
-              <div>
+                <h3>你发送的消息从{{ from_body_text_cn }}到{{ to_body_text_cn }}需要多久呢？</h3>
+              <div class="astro_selector">
                 <div class="select">
                   <select v-model="from_body">
                     <option v-for="option in options_cn" v-bind:value="option.value">
@@ -51,7 +53,7 @@
                   </select>
                 </div>
 
-                <span>{{ from_body_text_cn }} To {{to_body_text_cn}} </span>
+                <span> 到 </span>
                 <div class="select">
                   <select v-model="to_body">
                     <option v-for="option in options_cn" v-bind:value="option.value">

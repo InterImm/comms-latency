@@ -34,12 +34,32 @@
       <div class="columns">
         <div class="column is-8-desktop is-offset-2-desktop">
           <div class="content">
-            <h3>How long does it take for my message to reach Mars?</h3>
 
             <!-- This is the beginning of the contents -->
 
             <div id="app">
-              <p>The communication time between Earth and Mars depends on the time.
+                <h3>How long does it take for my message to reach {{ to_body_text_en }} from {{ from_body_text_en }}? </h3>
+                <div class="astro_selector">
+                    <div class="select">
+                      <select v-model="from_body">
+                        <option v-for="option in options_en" v-bind:value="option.value">
+                          {{ option.text }}
+                        </option>
+                      </select>
+                    </div>
+
+                    <span> to </span>
+                    <div class="select">
+                      <select v-model="to_body">
+                        <option v-for="option in options_en" v-bind:value="option.value">
+                          {{ option.text }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+              <p>The communication time between {{ from_body_text_en }} and {{ to_body_text_en }} depends on the time. <span
+                style="display:none">{{ compute_draw_sol_scale_factor }}</span>
               </p>
 
               <div class="field">
@@ -62,7 +82,7 @@
                         </p>
                         <p>
                             It takes <span style="font-weight:bold;">{{ earth_mars_distance_lm }} minutes</span> for your message to
-                            reach Mars. A round trip would be <span style="font-weight:bold;">{{ earth_mars_round_trip }}
+                            reach {{ to_body_text_en }} from {{ from_body_text_en }}. A round trip would be <span style="font-weight:bold;">{{ earth_mars_round_trip }}
                               minutes</span>.
                         </p>
                       </div>
@@ -78,7 +98,7 @@
           <div class="content">
               <div>
                   <p>
-                    We sketched the relative positions of Earth and Mars.
+                    We sketched the relative positions of the bodies.
                   </p>
                 </div>
             <div id="solarsystem" style="width:100%;text-align:center;"></div>
@@ -124,7 +144,7 @@
           <span></span>
         </div>
       </div>
-  
+
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item" href="//interimm.org/en">
@@ -148,7 +168,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
@@ -157,7 +177,7 @@
                   style="color: #ed7a57;">
                   <i class="fab fa-github-square"></i>
                   <span class="nav-link-inner--text">
-  
+
                   </span>
                 </a>
               </p>
@@ -174,7 +194,7 @@
               </p>
             </div>
           </div>
-  
+
         </div>
       </div>
     </nav>
