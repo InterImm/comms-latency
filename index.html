@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>火星-地球通信延时</title>
+  <meta name="keywords" content="太阳系,火星,通信,星际通信">
+  <title>太阳系天体之间通信延时计算器</title>
   <link rel="stylesheet" href="css/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -36,17 +37,39 @@
       <div class="columns">
         <div class="column is-8-desktop is-offset-2-desktop">
           <div class="content">
-            <h3>你发送的消息从地球到火星需要多久呢？</h3>
+
+
 
             <!-- This is the beginning of the contents -->
 
             <div id="app">
-              <p>由于地球和火星时刻围绕太阳运转，地球和火星之间的通信延时是随时变化的。
+                <h3>你发送的消息从{{ from_body_text_cn }}到{{ to_body_text_cn }}需要多久呢？</h3>
+              <div class="astro_selector">
+                <div class="select">
+                  <select v-model="from_body">
+                    <option v-for="option in options_cn" v-bind:value="option.value">
+                      {{ option.text }}
+                    </option>
+                  </select>
+                </div>
+
+                <span> 到 </span>
+                <div class="select">
+                  <select v-model="to_body">
+                    <option v-for="option in options_cn" v-bind:value="option.value">
+                      {{ option.text }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <p>由于天体运动，{{ from_body_text_cn }} 和 {{ to_body_text_cn }} 之间的通信延时是随时变化的。<span
+                  style="display:none">{{ compute_draw_sol_scale_factor }}</span>
               </p>
 
               <div class="field">
-                  <label class="label">填写日期和时间（格式举例：2019-04-01T08:30:18Z，2019-04-01）</label>
-              <div class="control">
+                <label class="label">填写日期和时间（格式举例：2019-04-01T08:30:18Z，2019-04-01）</label>
+                <div class="control">
                   <input class="input" type="datetime" v-model="form.selected_date">
                 </div>
               </div>
@@ -62,7 +85,8 @@
                         </div>
                       </p>
                       <p>
-                        你的消息从地球到达火星，需要<span style="font-weight:bold;"> {{ earth_mars_distance_lm }} 分钟</span>的时间。消息往返需要
+                        你的消息从{{ from_body_text_cn }}到达{{ to_body_text_cn }}，需要<span style="font-weight:bold;">
+                          {{ earth_mars_distance_lm }} 分钟</span>的时间。消息往返需要
                         <span style="font-weight:bold;">{{ earth_mars_round_trip }}
                           分钟</span>.
                       </p>
@@ -79,7 +103,7 @@
           <div class="content">
             <div>
               <p>
-                我们绘制了所选日期时，火星和地球的相对位置的情况。
+                我们绘制了所选日期时，天体之间的相对位置的情况。
               </p>
             </div>
             <div id="solarsystem" style="width:100%;text-align:center;"></div>
@@ -189,7 +213,6 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <script src="lib/navbar.js"></script>
-
 
   <script type="text/javascript" src="lib/util.js"></script>
   <script type="text/javascript" src="lib/main.js"></script>
